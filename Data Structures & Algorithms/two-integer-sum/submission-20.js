@@ -1,0 +1,21 @@
+class Solution {
+    /**
+     * @param {number[]} nums
+     * @param {number} target
+     * @return {number[]}
+     */
+    twoSum(nums, target) {
+        let res = new Map()
+
+        for(let i = 0; i < nums.length; i++){
+            let numNeed = target - nums[i]
+            if(res.has(numNeed)){
+                return [res.get(numNeed), i]
+            }
+
+            res.set(nums[i], i)
+        }
+
+        return []
+    }
+}
